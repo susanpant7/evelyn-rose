@@ -1,7 +1,11 @@
+import Gallery from '@/components/Gallery';
+import PageLayout from '@/components/ui/PageLayout';
+
 export default function Home() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', fontSize: '2rem', fontFamily: 'sans-serif' }}>
-      Hello world
+    <div className="animate-fade-in">
+      <PageLayout titleKey="home" />
+      <Gallery />
     </div>
   );
 }

@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0a;
+  --color-foreground: #ededed;
+  --color-accent: #3b82f6;
+  --color-accent-muted: #1d4ed8;
+  --color-card-bg: rgba(255, 255, 255, 0.05);
+  --color-card-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent;
+  }
+
+  .nav-link {
+    @apply text-sm text-zinc-400 transition-colors hover:text-white;
+  }
+
+  .nav-link-active {
+    @apply text-white font-medium;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground scroll-smooth;
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-outfit), sans-serif;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
