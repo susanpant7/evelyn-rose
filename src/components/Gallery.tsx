@@ -38,9 +38,7 @@ interface GalleryProps {
 }
 
 export default async function Gallery({ category = 'home' }: GalleryProps) {
-    const folder = category === 'home'
-        ? 'evelyn-rose'
-        : `evelyn-rose/${category}`;
+    const folder = `evelyn-rose/${category}`;
 
     const images = await getImages(folder);
 

@@ -8,9 +8,9 @@ export interface NavLink {
 
 export const navigationLinks: NavLink[] = [
     { label: 'Home', href: '/', icon: Home },
+    { label: 'Family', href: '/family', icon: Users },
     { label: 'Nwaaran', href: '/nwaaran', icon: Baby },
     { label: 'Paasni', href: '/paasni', icon: Utensils },
-    { label: 'Family', href: '/family', icon: Users },
     { label: 'Travel', href: '/travel', icon: Plane },
     { label: 'Birthday', href: '/birthday', icon: Cake },
 ];
