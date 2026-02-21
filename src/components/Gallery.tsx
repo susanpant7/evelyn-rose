@@ -3,6 +3,7 @@ import Image from 'next/image';
 import cloudinary from '@/lib/cloudinary';
 import { CloudinaryImage } from '@/types/cloudinary.types';
 import EmptyState from './ui/EmptyState';
+import { unstable_noStore as noStore } from 'next/cache';
 
 const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 
@@ -19,6 +20,7 @@ function formatTitle(publicId: string) {
 
 async function getImages(folder: string): Promise<CloudinaryImage[]> {
     try {
+        noStore();
         const result = await cloudinary.search
             .expression(`folder:${folder}/*`)   // ← key fix: use search not api.resources
             .sort_by('public_id', 'desc')
@@ -38,8 +40,8 @@ interface GalleryProps {
 }
 
 export default async function Gallery({ category = 'home' }: GalleryProps) {
-    const folder = `evelyn-rose/${category}`;
-
+    const folder = `evelyn-rose/${category}/images`;
+    console.log(folder);
     const images = await getImages(folder);
 
     if (images.length === 0) {

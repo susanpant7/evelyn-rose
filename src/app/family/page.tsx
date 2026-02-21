@@ -5,7 +5,7 @@ export default function FamilyPage() {
     return (
         <div className="animate-fade-in">
             <PageLayout titleKey="family" />
-            <Gallery category="Family" />
+            <Gallery category="family" />
         </div>
     );
 }

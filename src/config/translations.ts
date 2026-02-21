@@ -95,7 +95,7 @@ export const translations = {
     gallery: {
         noMemories: {
             en: "No little memories here just yet — more magic coming soon!",
-            np: "अहिलेसम्म यहाँ साना सम्झनाहरू छैनन् — चाँडै थप जादु आउनेछ!"
+            np: "अहिलेसम्म यहाँ साना सम्झनाहरू छैनन् — तर चाँडै मिठा सम्झनाहरू यहाँ सजिनेछन्।"
         },
     }
 };
